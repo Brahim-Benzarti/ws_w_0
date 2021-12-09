@@ -19,7 +19,7 @@ class Emails extends Controller
         try {
             Mail::to($request->email)->send($emailtosend);
         } catch (\Throwable $th) {
-            return "Something went wrong".$th;
+            return "Something went wrong";
         }
         return "Sent!";
     }
