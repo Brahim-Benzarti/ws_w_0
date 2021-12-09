@@ -16,9 +16,16 @@ class Casual extends Mailable
      *
      * @return void
      */
-    public function __construct()
+
+    public $subject;
+    public $recipient;
+    public $email_body;
+
+    public function __construct($subject,$recipient,$email_body)
     {
-        //
+        $this->subject=$subject;
+        $this->recipient=$recipient;
+        $this->email_body=$email_body;
     }
 
     /**
@@ -28,6 +35,6 @@ class Casual extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.casual');
+        return $this->markdown('emails.casual')->subject($this->subject);
     }
 }

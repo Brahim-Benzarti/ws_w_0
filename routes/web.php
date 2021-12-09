@@ -18,4 +18,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('email/casual', [Emails::class, 'previewCasual']);
 Route::post('email/casual', [Emails::class, 'sendCasual'])->name('casual');
